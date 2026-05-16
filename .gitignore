@@ -1,0 +1,11 @@
+__pycache__/
+.ipynb_checkpoints/
+.env
+*.log
+outputs/*.tmp
+outputs/*.png
+
+# Keep raw CMS data local unless you intentionally decide to publish a sample.
+data/raw/*.csv
+data/raw/*.zip
+

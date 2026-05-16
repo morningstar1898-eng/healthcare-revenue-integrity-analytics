@@ -1,0 +1,16 @@
+name: healthcare-revenue-integrity
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - jupyter
+  - notebook
+  - sqlalchemy
+  - psycopg2
+  - openpyxl
+
