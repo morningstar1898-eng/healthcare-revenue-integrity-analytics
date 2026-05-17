@@ -223,10 +223,10 @@ LIMIT 20;
 SELECT
     place_of_service_label,
     COUNT(*) AS provider_service_rows,
-    ROUND(SUM(tot_services), 0) AS total_services,
+    ROUND(SUM(tot_srvcs), 0) AS total_services,
     ROUND(SUM(estimated_medicare_payment), 2) AS estimated_medicare_payment,
     ROUND(
-        SUM(estimated_medicare_payment) / NULLIF(SUM(tot_services), 0),
+        SUM(estimated_medicare_payment) / NULLIF(SUM(tot_srvcs), 0),
         2
     ) AS avg_payment_per_service,
     ROUND(
