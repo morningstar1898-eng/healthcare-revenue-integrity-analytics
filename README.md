@@ -53,7 +53,7 @@ healthcare-revenue-integrity-analytics-platform/
   scripts/
   sql/
     01_schema.sql
-    02_analysis_queries.sql
+    03_analysis_queries.sql
   tableau/
     dashboard_plan.md
   outputs/
@@ -64,4 +64,3 @@ healthcare-revenue-integrity-analytics-platform/
 ## Portfolio Positioning
 
 This project connects medical coding audit experience with analytics by using coding, reimbursement, and compliance logic to create measurable risk indicators. The goal is not to prove fraud or improper billing, but to identify patterns that may deserve audit review, documentation review, or revenue cycle monitoring.
-

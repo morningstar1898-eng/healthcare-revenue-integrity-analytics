@@ -7,7 +7,7 @@ Use PostgreSQL to answer revenue integrity business questions from the cleaned C
 The SQL queries are stored here:
 
 ```text
-sql/02_analysis_queries.sql
+sql/03_analysis_queries.sql
 ```
 
 ## What This Step Accomplishes
@@ -50,7 +50,7 @@ Avoid saying:
 4. Open:
 
 ```text
-C:\Users\morni\OneDrive\Documents\New project\healthcare-revenue-integrity-analytics-platform\sql\02_analysis_queries.sql
+C:\Users\morni\OneDrive\Documents\New project\healthcare-revenue-integrity-analytics-platform\sql\03_analysis_queries.sql
 ```
 
 5. Highlight one query at a time.
@@ -88,4 +88,3 @@ Do not interpret outliers as wrongdoing. An outlier is a review signal, not a co
 Do not compare providers across all specialties without context. A cardiologist, pathologist, ambulance provider, and physical therapist have different payment and utilization patterns. Peer comparison by specialty is more defensible.
 
 Do not forget to save useful query outputs. Results from these queries will later support the Tableau dashboard and GitHub case study.
-
