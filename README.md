@@ -54,6 +54,7 @@ healthcare-revenue-integrity-analytics-platform/
   sql/
     01_schema.sql
     03_analysis_queries.sql
+    04_kpi_and_risk_views.sql
   tableau/
     dashboard_plan.md
   outputs/

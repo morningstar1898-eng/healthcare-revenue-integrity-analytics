@@ -79,6 +79,16 @@ Suggested portfolio wording:
 
 > Used PostgreSQL to analyze cleaned CMS Medicare provider payment data, creating revenue integrity queries for specialty payment trends, HCPCS coding utilization, charge-to-payment variance, provider outlier detection, and audit prioritization.
 
+## Next SQL File
+
+After running the analysis queries, run:
+
+```text
+sql/04_kpi_and_risk_views.sql
+```
+
+This creates reusable KPI and risk indicator views for Tableau and portfolio reporting.
+
 ## Common Beginner Mistakes To Avoid
 
 Do not run the entire SQL file at once while learning. Highlight and run one query at a time.
