@@ -1,4 +1,8 @@
-# Healthcare Revenue Integrity Analytics Platform
+# Project 02: Healthcare Revenue Integrity Analytics Platform
+
+**Portfolio owner:** Meagan Parsons  
+**Portfolio focus:** Revenue integrity, CMS Medicare analytics, provider performance, SQL, Python, Tableau, and business intelligence  
+**Status:** Built project with CMS data workflow, Python cleaning, SQL analysis, processed outputs, and Tableau dashboard planning
 
 ## Project Objective
 
@@ -57,11 +61,37 @@ healthcare-revenue-integrity-analytics-platform/
     04_kpi_and_risk_views.sql
   tableau/
     dashboard_plan.md
+  visuals/
+    generate_charts.py
+    revenue_by_specialty.png
+    payment_variance_risk.png
+    geographic_payment_distribution.png
+    top_hcpcs_by_volume.png
   outputs/
   README.md
   environment.yml
 ```
 
+## Key Visualizations
+
+### Medicare Payment by Specialty
+![Top 15 Specialties by Medicare Payment](visuals/revenue_by_specialty.png)
+
+### Revenue Integrity Risk: Charge-to-Payment Variance
+![Charge-to-Payment Ratio by Specialty](visuals/payment_variance_risk.png)
+
+### Geographic Distribution of Medicare Payments
+![Top 15 States by Medicare Payment Volume](visuals/geographic_payment_distribution.png)
+
+### Top HCPCS Codes by Service Volume
+![Top 15 HCPCS Codes by Service Volume](visuals/top_hcpcs_by_volume.png)
+
 ## Portfolio Positioning
 
 This project connects medical coding audit experience with analytics by using coding, reimbursement, and compliance logic to create measurable risk indicators. The goal is not to prove fraud or improper billing, but to identify patterns that may deserve audit review, documentation review, or revenue cycle monitoring.
+
+## Portfolio Links
+
+- LinkedIn: [www.linkedin.com/in/meagan-parsons-37321a177](https://www.linkedin.com/in/meagan-parsons-37321a177)
+- GitHub: [github.com/morningstar1898-eng](https://github.com/morningstar1898-eng)
+- Tableau Public: [public.tableau.com/app/profile/meagan.parsons/vizzes](https://public.tableau.com/app/profile/meagan.parsons/vizzes)
