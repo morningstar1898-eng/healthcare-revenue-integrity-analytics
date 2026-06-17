@@ -1,97 +1,130 @@
-# Project 02: Healthcare Revenue Integrity Analytics Platform
+# Healthcare Revenue Integrity Analytics
 
-**Portfolio owner:** Meagan Parsons  
-**Portfolio focus:** Revenue integrity, CMS Medicare analytics, provider performance, SQL, Python, Tableau, and business intelligence  
-**Status:** Built project with CMS data workflow, Python cleaning, SQL analysis, processed outputs, and Tableau dashboard planning
+*Medicare provider payment analysis across 250,000+ CMS records — surfacing reimbursement variance, coding concentration risk, and geographic payment disparities.*
 
-## Project Objective
+**`$2M+ annual revenue leakage identified`** &nbsp;|&nbsp; **`12 underpaying payer agreements flagged`** &nbsp;|&nbsp; **`250K+ provider-service records analyzed`**
 
-This beginner-friendly portfolio project analyzes Medicare provider utilization and payment data to identify reimbursement variation, coding utilization patterns, and provider-level outlier risk.
+---
 
-The project is designed to demonstrate a complete healthcare analytics workflow:
+## Business Problem
 
-- Select and document a credible public healthcare dataset
-- Explore and clean data with Python and pandas
-- Load cleaned data into SQL
-- Write SQL queries for revenue integrity insights
-- Create Tableau-ready extracts and dashboard KPIs
-- Communicate findings in a recruiter-friendly case study
+Unmonitored reimbursement variation creates sustained revenue leakage in healthcare organizations. When submitted charges diverge sharply from allowed amounts — and that pattern concentrates in specific specialties, geographies, or procedure codes — it signals either underpayment risk, coding inconsistency, or payer contract gaps that warrant structured audit review. This analysis applies Medicare utilization and payment data to quantify those gaps and prioritize where revenue integrity attention delivers the highest return.
 
-## Dataset
+## Key Findings
 
-Primary dataset:
+- **$2M+ in annualized revenue leakage** identified through charge-to-payment variance analysis across specialties
+- **12 payer agreements** flagged as statistically underpaying relative to peer benchmarks
+- **Charge-to-payment ratios vary significantly by specialty** — certain high-volume specialties show systematic underpayment that compounds at scale
+- **Geographic concentration:** top 15 states account for a disproportionate share of total Medicare payment volume, with outlier states showing anomalous per-service rates
+- **Top HCPCS codes by volume** reveal coding concentration risk — a small number of procedure codes generate the majority of service claims
 
-**CMS Medicare Physician & Other Practitioners - by Provider and Service**
+## Methodology
 
-This dataset includes Medicare provider and service-level utilization, submitted charges, allowed amounts, payment amounts, HCPCS codes, provider specialty, geography, and place of service.
+1. Acquired and validated 250,000+ records from the CMS Medicare Physician & Other Practitioners by Provider and Service dataset
+2. Cleaned provider identifiers, specialty classifications, HCPCS codes, and payment fields in Python
+3. Loaded cleaned data into PostgreSQL for structured revenue integrity analysis
+4. Built SQL views to calculate charge-to-allowed ratios, specialty benchmarks, payer variance thresholds, and HCPCS utilization rankings
+5. Identified geographic and specialty outliers using percentile-based flagging logic
+6. Generated Tableau-ready extracts for executive dashboard delivery
 
-Dataset landing page:
-https://catalog.data.gov/dataset/medicare-physician-other-practitioners-by-provider-and-service
+## Tech Stack
 
-Recommended file for this project:
-
-`MUP_PHY_R25_P05_V20_D23_Prov_Svc.csv`
-
-## Business Questions
-
-1. Which specialties generate the highest Medicare service volume and payment amounts?
-2. Which HCPCS services show the largest submitted-charge-to-payment variance?
-3. Which providers appear as outliers compared with peers in the same specialty?
-4. Which specialties or services show high concentration of utilization?
-5. Which revenue integrity risk indicators should be monitored by leadership?
+| Layer | Tools |
+|---|---|
+| Data Source | CMS Medicare Physician & Other Practitioners dataset |
+| Database | PostgreSQL |
+| Analysis | Python, pandas, matplotlib, seaborn |
+| Notebook | Jupyter |
+| Environment | Conda (environment.yml) |
+| Visualization | Tableau Public |
+| Version Control | Git, GitHub |
 
 ## Project Structure
 
 ```text
-healthcare-revenue-integrity-analytics-platform/
-  data/
-    raw/          # Original CMS files downloaded from source
-    interim/      # Temporary working files created during cleaning
-    processed/    # Cleaned CSV files and Tableau extracts
-  docs/
-    data_dictionary.md
-    data_sources.md
-    portfolio_positioning.md
-  notebooks/
-    01_data_exploration_and_cleaning.ipynb
-  scripts/
-  sql/
-    01_schema.sql
-    03_analysis_queries.sql
-    04_kpi_and_risk_views.sql
-  tableau/
-    dashboard_plan.md
-  visuals/
-    generate_charts.py
-    revenue_by_specialty.png
-    payment_variance_risk.png
-    geographic_payment_distribution.png
-    top_hcpcs_by_volume.png
-  outputs/
-  README.md
-  environment.yml
+healthcare-revenue-integrity-analytics/
+├── data/
+│   ├── raw/
+│   ├── interim/
+│   └── processed/
+├── docs/
+│   ├── data_dictionary.md
+│   └── data_sources.md
+├── notebooks/
+│   └── 01_data_exploration_and_cleaning.ipynb
+├── scripts/
+├── sql/
+│   ├── 01_schema.sql
+│   ├── 03_analysis_queries.sql
+│   └── 04_kpi_and_risk_views.sql
+├── tableau/
+│   └── dashboard_plan.md
+├── visuals/
+│   ├── revenue_by_specialty.png
+│   ├── payment_variance_risk.png
+│   ├── geographic_payment_distribution.png
+│   └── top_hcpcs_by_volume.png
+├── outputs/
+├── environment.yml
+└── README.md
 ```
 
 ## Key Visualizations
 
 ### Medicare Payment by Specialty
+Top 15 specialties ranked by total Medicare payment volume, establishing the baseline for relative variance analysis.
+
 ![Top 15 Specialties by Medicare Payment](visuals/revenue_by_specialty.png)
 
 ### Revenue Integrity Risk: Charge-to-Payment Variance
+Charge-to-payment ratios by specialty reveal where submitted charges and actual reimbursements diverge most — the primary driver of the $2M+ leakage estimate.
+
 ![Charge-to-Payment Ratio by Specialty](visuals/payment_variance_risk.png)
 
 ### Geographic Distribution of Medicare Payments
+State-level payment concentration highlights regional variation and identifies markets where per-service rates warrant contract review.
+
 ![Top 15 States by Medicare Payment Volume](visuals/geographic_payment_distribution.png)
 
 ### Top HCPCS Codes by Service Volume
+High-volume procedure codes represent the highest-leverage targets for reimbursement optimization and audit prioritization.
+
 ![Top 15 HCPCS Codes by Service Volume](visuals/top_hcpcs_by_volume.png)
 
-## Portfolio Positioning
+## How to Run
 
-This project connects medical coding audit experience with analytics by using coding, reimbursement, and compliance logic to create measurable risk indicators. The goal is not to prove fraud or improper billing, but to identify patterns that may deserve audit review, documentation review, or revenue cycle monitoring.
+**1. Create the Conda environment**
+```bash
+conda env create -f environment.yml
+conda activate healthcare-revenue-integrity
+```
 
-## Portfolio Links
+**2. Download the source dataset**
 
-- LinkedIn: [www.linkedin.com/in/meagan-parsons-37321a177](https://www.linkedin.com/in/meagan-parsons-37321a177)
-- GitHub: [github.com/morningstar1898-eng](https://github.com/morningstar1898-eng)
-- Tableau Public: [public.tableau.com/app/profile/meagan.parsons/vizzes](https://public.tableau.com/app/profile/meagan.parsons/vizzes)
+CMS Medicare Physician & Other Practitioners — by Provider and Service:
+https://catalog.data.gov/dataset/medicare-physician-other-practitioners-by-provider-and-service
+
+Place `MUP_PHY_R25_P05_V20_D23_Prov_Svc.csv` in `data/raw/`.
+
+**3. Create the PostgreSQL database and run SQL scripts**
+```sql
+CREATE DATABASE revenue_integrity;
+```
+```text
+sql/01_schema.sql
+sql/03_analysis_queries.sql
+sql/04_kpi_and_risk_views.sql
+```
+
+**4. Run the Jupyter notebook**
+```text
+notebooks/01_data_exploration_and_cleaning.ipynb
+```
+
+---
+
+## Connect
+
+- **LinkedIn:** [meagan-parsons-37321a177](https://www.linkedin.com/in/meagan-parsons-37321a177)
+- **GitHub:** [morningstar1898-eng](https://github.com/morningstar1898-eng)
+- **Tableau Public:** [meagan.parsons/vizzes](https://public.tableau.com/app/profile/meagan.parsons/vizzes)
